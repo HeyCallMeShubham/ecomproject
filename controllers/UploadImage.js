@@ -28,7 +28,7 @@ const UploadImage = async (req, res, next) => {
             images.images.push(url);
 
 
-            fs.unlinkSync(`${path.resolve(__dirname, "../images")}/${image.filename}`);
+            fs.unlinkSync(`${path.resolve(__dirname, "../uploads")}/${image.filename}`);
 
 
         }
