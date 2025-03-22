@@ -44,9 +44,9 @@ const UploadImage = async (req, res, next) => {
     } catch (err) {
 
 
-        for (let image of fs.readdirSync(`${path.resolve(__dirname, "../images")}`)) {
+        for (let image of fs.readdirSync(`${path.resolve(__dirname, "../uploads")}`)) {
 
-            fs.unlinkSync(`${path.resolve(__dirname, "../images")}/${image}`);
+            fs.unlinkSync(`${path.resolve(__dirname, "../uploads")}/${image}`);
 
         }
 

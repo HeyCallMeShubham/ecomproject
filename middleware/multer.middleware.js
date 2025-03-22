@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
 
         console.log(req,'req');
         
-        return cb(null, path.resolve(__dirname, "../images"));
+        return cb(null, path.resolve(__dirname, "../uploads"));
         
     },
     
