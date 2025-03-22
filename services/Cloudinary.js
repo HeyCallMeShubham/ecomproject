@@ -5,8 +5,8 @@ const cloudinary = require("cloudinary").v2
 
 
 cloudinary.config({
-    
-   // replace these field with your cloudinary configs here
+
+    // replace these field with your cloudinary configs here
 
     cloud_name: "",
     api_key: "",
@@ -28,10 +28,9 @@ const cloudinaryUploadImage = async (imagePath) => {
         });
 
 
-        return result.url
+        return { image_url: result.url, image_asset_id: result.asset_id, image_public_id: result.public_id }
 
     } catch (err) {
-
 
         console.log(err);
 

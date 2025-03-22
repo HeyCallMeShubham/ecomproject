@@ -10,8 +10,7 @@ const UploadImage = async (req, res, next) => {
 
     try {
 
-        console.log(req.body, 'body');
-        console.log(req.files, 'file');
+     
 
         const images = new ImageModel({
 

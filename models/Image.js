@@ -5,7 +5,13 @@ const mongoose = require("mongoose");
 
 const Images = new mongoose.Schema({
 
-    images: { type: [String], required: true },
+    images: { type: [{
+
+        image_url:{type:String, required:true},
+        image_asset_id:{type:String, required:true},
+        image_public_id:{type:String, required:true},
+
+    }], required: true },
     productId: { type: mongoose.Schema.Types.ObjectId, ref: "Product", required: true }
 
 });

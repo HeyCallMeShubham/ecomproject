@@ -5,6 +5,11 @@ const Register = require("../models/register"); // Import the register model
 exports.login = async (req, res) => {
   const { email, password } = req.body;
 
+  console.log(req.body, "req.body");
+
+
+
+  
   try {
     // Find user by email
     const user = await Register.findOne({ email });

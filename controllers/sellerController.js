@@ -5,6 +5,9 @@ const mongoose = require("mongoose");
 // Create a product with Save to Pay options
 exports.createProduct = async (req, res) => {
   try {
+    
+    
+    
     const {
       name,
       price,
@@ -16,6 +19,8 @@ exports.createProduct = async (req, res) => {
       interest_rate,
       seller_id,
     } = req.body;
+
+
 
     const product = new Product({
       name,
@@ -48,14 +53,24 @@ exports.updateProduct = async (req, res) => {
       return res.status(400).json({ message: "Invalid product ID" });
     }
 
+
+
     const product = await Product.findByIdAndUpdate(id, req.body, {
       new: true,
     });
+
+
+
     if (!product) {
       return res.status(404).json({ message: "Product not found" });
     }
 
+
+
     res.json({ message: "Product updated successfully", product });
+  
+  
+  
   } catch (err) {
     res
       .status(500)
