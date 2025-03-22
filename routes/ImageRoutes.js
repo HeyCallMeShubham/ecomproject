@@ -14,6 +14,10 @@ ImageRouter.post("/uploadImage", authenticateUser, upload.array("productImage"),
 
 
 
+// in order to use upload image api one has to be 
+// authenticated/logged in 
+
+
 
 module.exports = ImageRouter
 

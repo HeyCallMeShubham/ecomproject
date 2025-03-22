@@ -10,12 +10,14 @@ const UploadImage = async (req, res, next) => {
 
     try {
 
-     
+
 
         const images = new ImageModel({
 
             images: [],
             productId: "67d1b879686b9ac183963cf9"
+
+            // replace this productId with dynamic product id 
 
         });
 
@@ -33,16 +35,21 @@ const UploadImage = async (req, res, next) => {
 
         await images.save();
 
+        res.status(201).json({ message: "product images uploaded successfully" });
+
+
+
+        /// the images url along with their asset and public ids will be stored in database 
 
     } catch (err) {
- 
-        
+
+
         for (let image of fs.readdirSync(`${path.resolve(__dirname, "../images")}`)) {
-            
+
             fs.unlinkSync(`${path.resolve(__dirname, "../images")}/${image}`);
-          
+
         }
-        
+
         console.log(err);
 
     }
