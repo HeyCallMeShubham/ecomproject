@@ -60,15 +60,7 @@ app.use("/api/admin", adminRoutes);
 app.use("/api/image", ImageRouter);
 
 
-
-        
-        for (let image of fs.readdirSync(`${path.resolve(__dirname, "./images")}`)) {
-            
-            fs.unlinkSync(`${path.resolve(__dirname, "./images")}/${image}`);
-          
-        }
-        
-
+ 
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
