@@ -15,7 +15,7 @@ const UploadImage = async (req, res, next) => {
         const images = new ImageModel({
 
             images: [],
-            productId: "67d1b879686b9ac183963cf9"
+            productId: req.body.productId
 
             // replace this productId with dynamic product id 
 
@@ -27,9 +27,7 @@ const UploadImage = async (req, res, next) => {
 
             images.images.push(url);
 
-
             fs.unlinkSync(`${path.resolve(__dirname, "../uploads")}/${image.filename}`);
-
 
         }
 
